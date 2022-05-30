@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<style type="text/css">
+.title {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.header-btn {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.author{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+.affiliation {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: small;
+}
+.title-links {
+    margin-bottom: 30px;
+}
+.video {
+    margin-bottom: 50px;
+}
+.cite pre {
+    background-color: #EEEEEE;
+    padding: 5px;
+}
+.title-images .row figure:nth-child(even) {
+    padding-left: 1px !important;
+}
+.title-images .row figure:nth-child(odd) {
+    padding-right: 1px !important;
+}
+</style>
+<head>
+<title>DeltaCNN</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container title">
+    <h1 class="text-center">DeltaCNN</h1>
+    <h3 class="text-center">End-to-End CNN Inference of Sparse Frame Differences in Videos</h3>
+    <div class="row justify-content-center">
+        <span class="author"><a href="https://www.linkedin.com/in/mathias-parger-b93029197/">Mathias Parger</a> <sup>1</sup></a>
+        <span class="author">Chengcheng Tang <sup>2</sup></span>
+        <span class="author">Christopher D. Twigg <sup>2</sup></span>
+    </div>
+    <div class="row justify-content-center">
+        <span class="author">Cem Keskin <sup>2</sup></span>
+        <span class="author">Robert Wang <sup>2</sup></span>
+        <span class="author">Markus Steinberger <sup>1</sup></span>
+    </div>
+    <div class="row justify-content-center">
+        <span class="affiliation"><sup>1</sup>Graz University of Technology</span>
+        <span class="affiliation"><sup>2</sup>Meta Reality Labs</span>
+    </div>
+</div>
+<div class="container title-links">
+    <div class="row justify-content-center">
+        <a class="col-3 btn btn-primary header-btn" href="https://arxiv.org/abs/2203.03996"><i class="fas fa-scroll"></i> Paper (Arxiv)</a>
+        <a class="col-3 btn btn-primary header-btn" href="https://github.com/dabeschte/DeltaCNN"><i class="fa fa-code" aria-hidden="true"></i> Code (Github)</a>
+        <a class="col-3 btn btn-primary header-btn" href="https://youtu.be/xpfdRSQD4nU"><i class="fas fa-video"></i> Video (Youtube)</a>
+    </div>
+</div>
+
+<div class="container title-images">
+    <div class="row justify-content-center">
+        <!-- <img src="images/h36m_pred.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""> -->
+        <div class="col-5">
+            <div class="row">
+                <figure class="figure col-6">
+                    <img src="images/h36m_pred.png" class="figure-img img-fluid" alt="">
+                    <figcaption class="figure-caption text-center">Prediction</figcaption>
+                </figure>
+                <figure class="figure col-6">
+                    <img src="images/h36m_heatmap.png" class="figure-img img-fluid" alt="">
+                    <figcaption class="figure-caption text-center">Updates</figcaption>
+                </figure>
+            </div>
+        </div>        
+        <div class="col-5">
+            <div class="row">
+                <figure class="figure col-6">
+                    <img src="images/mot16_pred.png" class="figure-img img-fluid" alt="">
+                    <figcaption class="figure-caption text-center">Prediction</figcaption>
+                </figure>
+                <figure class="figure col-6">
+                    <img src="images/mot16_heatmap.png" class="figure-img img-fluid" alt="">
+                    <figcaption class="figure-caption text-center">Updates</figcaption>
+                </figure>
+            </div>
+        </div>     
+        <!-- <figure class="figure col-1" style="max-height:80px">
+            <img src="images/heatmap_legend_vertical_0-100.png" class="figure-img img-fluid" alt="">
+        </figure> -->
+    </div>
+</div>
+
+<div class="container abstract">
+    <h3>Abstract</h3>
+    <p>Convolutional neural network inference on video data requires powerful hardware for real-time processing. Given the inherent coherence across consecutive frames, large parts of a video typically change little. By skipping identical image regions and truncating insignificant pixel updates, computational redundancy can in theory be reduced significantly. However, these theoretical savings have been difficult to translate into practice, as sparse updates hamper computational consistency and memory access coherence; which are key for efficiency on real hardware. With DeltaCNN, we present a sparse convolutional neural network framework that enables sparse frame-by-frame updates to accelerate video inference in practice. We provide sparse implementations for all typical CNN layers and propagate sparse feature updates end-to-end - without accumulating errors over time. DeltaCNN is applicable to all convolutional neural networks without retraining. To the best of our knowledge, we are the first to significantly outperform the dense reference, cuDNN, in practical settings, achieving speedups of up to 7x with only marginal differences in accuracy.</p>
+</div>
+
+<div class="container video">
+    <h3>Video</h3>
+    <div class="row justify-content-center">
+    <iframe width="800" height="450" src="https://www.youtube.com/embed/xpfdRSQD4nU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div class="container cite">
+<h3>Cite</h3>
+<pre>
+@article{parger2022deltacnn,
+    title = {DeltaCNN: End-to-End CNN Inference of Sparse Frame Differences in Videos},
+    author = {Mathias Parger, Chengcheng Tang, Christopher D. Twigg, Cem Keskin, Robert Wang, Markus Steinberger},
+    journal = {CVPR 2022},
+    year = {2022},
+    month = jun
+}
+</pre>
+</div>
+</body>
+</html>
