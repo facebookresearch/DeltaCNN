@@ -1252,7 +1252,7 @@ class DCSparsify(DCModule):
                 x = input - self.prev_in
                 mask = torch.max(torch.abs(x), dim=1, keepdim=True)[0] > threshold
                 tiled_mask = torch.repeat_interleave(self.mask, dim=1, repeats=x.shape[1])
-                self.prev_in[tiled_mask] = input
+                self.prev_in[tiled_mask] = input[tiled_mask]
                 x[~tiled_mask] = 0
                 return x
 
