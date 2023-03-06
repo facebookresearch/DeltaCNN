@@ -360,8 +360,7 @@ class DCConv2d(nn.Conv2d, DCModule):
             self.input_logger.added_id = True
             self.prev_in_logger.added_id = True
 
-        # TODO fix tuned thresholds so that we can remove self.dense_out here. does not make sense to use at all
-        if (self.activation is not None or self.dense_out or (self.dense_in and not (self.backend == DCBackend.delta_cudnn))) \
+        if (self.activation is not None or (self.dense_in and not (self.backend == DCBackend.delta_cudnn))) \
                 and not self.backend == DCBackend.cudnn:
             DCThreshold.set(self, self.delta_threshold)
 
